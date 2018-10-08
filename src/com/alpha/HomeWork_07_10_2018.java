@@ -15,15 +15,6 @@ public class HomeWork_07_10_2018 {
         String zzz = "eeejjhdnmmcbrybddd_aaaooooosssgggewjnciwejjjjjpol";
         System.out.println(subString(zzz, 5));
 
-        //это для дебага, надеюсь не мешает
-//        StringBuilder ss = new StringBuilder(q);
-//        ss.reverse();
-//        System.out.println(ss);
-//        System.out.println(ss.charAt(2));
-//        System.out.println(ss.charAt(3));
-//        System.out.println(ss.charAt(2) == ss.charAt(3));
-//        System.out.println(q.substring(q.length()-5, 14));
-
 
         //тест задания №2 поменять местами значения переменных, не вводя дополнительные
         System.out.println("a " + a + " b " + b + " c " + c + " d " + d);
@@ -58,8 +49,6 @@ public class HomeWork_07_10_2018 {
                  }
             }
         }
-        //это для дебага, оставляю здесь, чтобы объяснить если что, что я наделал
-        //System.out.println("position " + position + "\ncounter" + counter);
 
         return string.substring(string.length()-position-1, string.length()-position-1+counter);
     }

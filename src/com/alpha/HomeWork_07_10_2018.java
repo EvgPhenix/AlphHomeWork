@@ -49,10 +49,10 @@ public class HomeWork_07_10_2018 {
                      position = i;
                      break;
                  }
-                if (!(zopa.charAt(i)==zopa.charAt(i+1)) && counter>value){
-                    position = i;
-                    break;
-                }
+                 if (!(zopa.charAt(i)==zopa.charAt(i+1)) && counter>value){
+                     position = i;
+                     break;
+                 }
                  if (!(zopa.charAt(i)==zopa.charAt(i+1)) && counter<value){
                      counter = 1;
                  }

@@ -9,6 +9,11 @@ public class HomeWork_30_09_2018_1 {
         System.out.println(summ(5, 12));
         System.out.println(summ(-2, -3));
         System.out.println(summ(Integer.MIN_VALUE/2+1, Integer.MAX_VALUE/2));
+
+        System.out.println(summ(Integer.MIN_VALUE/2-1, Integer.MAX_VALUE/2));
+        System.out.println(summ(Integer.MIN_VALUE/2+1, Integer.MAX_VALUE/2+1));
+        System.out.println(summ(Integer.MAX_VALUE/2+1, 2));
+        System.out.println(summ(Integer.MIN_VALUE/2+1, Integer.MIN_VALUE/2-1));
     }
     public static Integer summ(int a, int b){
         try{

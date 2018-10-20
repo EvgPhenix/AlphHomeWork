@@ -37,23 +37,7 @@ public class HomeWork_14_10_2018 {
     }
 
     public static void main(String[] args) {
-//        System.out.println(Math.sqrt(16));
-//        int[] mass = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16};
-//        int[] mass = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16};
-//        String[] mass = {"decdec", "11", "3", "4", "5", "177", "6", "8", "9"};
 
-//        int massiveLength = 0 + (int) (Math.random() * 256);
-//        String[] mass = new String[massiveLength];
-//        for (int i = 0; i < mass.length; i++) {
-//            String s = Integer.toString(0 + (int) (Math.random() * 256));
-//            mass[i] = s;
-//        }
-
-//        String x = Double.toString(Math.sqrt((double)mass.length));
-//        System.out.println(x);
-//        System.out.println(x.substring(x.indexOf(".")+1, x.length()-1));
-//        boolean b =x.substring(x.indexOf(".")+1, x.length()-1).matches("[0-9]+");
-//        System.out.println(b);
         for (int i = 0; i < 100; i++) {
             spiral(generateMassive());
         }

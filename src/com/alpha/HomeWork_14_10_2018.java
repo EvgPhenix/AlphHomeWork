@@ -22,7 +22,7 @@ package com.alpha;
 //        MTJ - https://github.com/fommil/matrix-toolkits-java
 //        nd4j - https://nd4j.org/ позволяет выбирать основные встроенные реализации, такие как cuda или openBlas
 
-//  Нигде необхлжимого функционала не нашел
+//  Нигде необходимого функционала не нашел
 
 
 public class HomeWork_14_10_2018 {

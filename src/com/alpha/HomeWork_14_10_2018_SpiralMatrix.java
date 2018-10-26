@@ -1,11 +1,19 @@
 package com.alpha;
 
 // Метод generateMassive генерирует одномерные массивы длиной до 256 исмволов из
+<<<<<<< HEAD:src/com/alpha/HomeWork_14_10_2018_SpiralMatrix.java
 // int-ов, коорые затем превращаются в String
 // Метод spiral(String[] mass) проверяет c помощью метода matches(String[] mass), возможно ли получить квадратный корень из длины
 // масссива, который будет целым числом, если да то размещает их по спирали и для проверки
 // еще размещает по спирали числа от одного до длины такого же массива
 // остальные методы для вывода
+=======
+// int-ов, которые затем превращаются в String
+// Метод spiral(String[] mass) проверяет, возможно ли получить квадратный корень из длины
+// масссива, который будет целым числом, если да то размещает данные сгенерированного массива
+// по спирали в квадратную матрицу со стороной равной квадратному корню из длины массива и для проверки
+// еще размещает по спирали числа от одного до длины такого же массива (для красоты просто)
+>>>>>>> d64d3324ec744c41bcb88c217b76cdf6789ce18f:src/com/alpha/HomeWork_14_10_2018.java
 
 // Проверил следующие библиотеки, работающие с матрицами в Java
 //        Apache Commons Math: http://commons.apache.org/proper/commons-math/
@@ -22,7 +30,7 @@ package com.alpha;
 //        MTJ - https://github.com/fommil/matrix-toolkits-java
 //        nd4j - https://nd4j.org/ позволяет выбирать основные встроенные реализации, такие как cuda или openBlas
 
-//  Нигде необхлжимого функционала не нашел
+//  Нигде необходимого функционала не нашел
 
 
 public class HomeWork_14_10_2018_SpiralMatrix {
@@ -38,23 +46,7 @@ public class HomeWork_14_10_2018_SpiralMatrix {
     }
 
     public static void main(String[] args) {
-//        System.out.println(Math.sqrt(16));
-//        int[] mass = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16};
-//        int[] mass = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16};
-//        String[] mass = {"decdec", "11", "3", "4", "5", "177", "6", "8", "9"};
 
-//        int massiveLength = 0 + (int) (Math.random() * 256);
-//        String[] mass = new String[massiveLength];
-//        for (int i = 0; i < mass.length; i++) {
-//            String s = Integer.toString(0 + (int) (Math.random() * 256));
-//            mass[i] = s;
-//        }
-
-//        String x = Double.toString(Math.sqrt((double)mass.length));
-//        System.out.println(x);
-//        System.out.println(x.substring(x.indexOf(".")+1, x.length()-1));
-//        boolean b =x.substring(x.indexOf(".")+1, x.length()-1).matches("[0-9]+");
-//        System.out.println(b);
         for (int i = 0; i < 100; i++) {
             spiral(generateMassive());
         }

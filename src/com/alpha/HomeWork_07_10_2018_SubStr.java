@@ -1,6 +1,6 @@
 package com.alpha;
 
-public class HomeWork_07_10_2018 {
+public class HomeWork_07_10_2018_SubStr {
     public static int a = 3, b = 5;
     public static int c = 7, d = 12;
 

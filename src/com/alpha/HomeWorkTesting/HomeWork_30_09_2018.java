@@ -1,4 +1,4 @@
-package com.alpha;
+package com.alpha.HomeWorkTesting;
 
 //сумма двух чисел
 //принимает значения от - Long.MIN_VALUE/2 до Long.MAX_VALU/2, если участвует float,

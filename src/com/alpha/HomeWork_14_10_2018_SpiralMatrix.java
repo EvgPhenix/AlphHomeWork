@@ -2,9 +2,10 @@ package com.alpha;
 
 // Метод generateMassive генерирует одномерные массивы длиной до 256 исмволов из
 // int-ов, коорые затем превращаются в String
-// Метод spiral(String[] mass) проверяет, возможно ли получить квадратный корень из длины
+// Метод spiral(String[] mass) проверяет c помощью метода matches(String[] mass), возможно ли получить квадратный корень из длины
 // масссива, который будет целым числом, если да то размещает их по спирали и для проверки
 // еще размещает по спирали числа от одного до длины такого же массива
+// остальные методы для вывода
 
 // Проверил следующие библиотеки, работающие с матрицами в Java
 //        Apache Commons Math: http://commons.apache.org/proper/commons-math/
@@ -24,7 +25,7 @@ package com.alpha;
 //  Нигде необхлжимого функционала не нашел
 
 
-public class HomeWork_14_10_2018 {
+public class HomeWork_14_10_2018_SpiralMatrix {
 
     public static String[] generateMassive(){
         int massiveLength = 0 + (int) (Math.random() * 256);
@@ -61,27 +62,21 @@ public class HomeWork_14_10_2018 {
     }
 
     public static void spiral(String[] mass){
-        double z = Math.sqrt((double)mass.length);
-        String x = Double.toString(z);
-        if (!(x.substring(x.indexOf(".")+1, x.length()-1).matches("[0-9]+"))){
+//        double z = Math.sqrt((double)mass.length);
+//        String x = Double.toString(z);
+//        if (!(x.substring(x.indexOf(".")+1, x.length()-1).matches("[0-9]+"))){
+        if (!matches(mass)){
             int n = (int)Math.sqrt((double)mass.length);
             String[][] matrix = new String[n][n];
             String[][] matr123 = new String[n][n];
 
-            int row = 0;
-            int col = 0;
-            int dx = 1;
-            int dy = 0;
-            int dirChanges = 0;
-            int visits = n;
+            int row = 0, col = 0, dx = 1, dy = 0, dirChanges = 0, visits = n;
 
             for (int i = 0; i < n * n; i++) {
                 matrix[row][col] = mass[i];
                 matr123[row][col] = Integer.toString(i+1);
                 if (--visits == 0) {
-                    visits = n * (dirChanges % 2) +
-                            n * ((dirChanges + 1) % 2) -
-                            (dirChanges / 2 - 1) - 2;
+                    visits = n * (dirChanges % 2) + n * ((dirChanges + 1) % 2) - (dirChanges / 2 - 1) - 2;
                     int temp = dx;
                     dx = -dy;
                     dy = temp;
@@ -90,40 +85,54 @@ public class HomeWork_14_10_2018 {
                 col += dx;
                 row += dy;
             }
-
-            System.out.println("!!!!_______________________________________________________");
-            System.out.println("Этот массив подходит, т.к. его квадратный корень целое число");
-            System.out.println("Длина массива равна " + mass.length);
-            System.out.println("Квадратный корень этой длины равен " + Math.sqrt(mass.length));
-            for (int i = 0; i < n; i++) {
-                for (int j = 0; j < n; j++)
-                    System.out.print(matrix[i][j] + "\t");
-                System.out.println();
-            }
-            System.out.println("______________________________________________");
-            System.out.println();
-
-
-
-            System.out.println("!!!!_______________________________________________________");
-            System.out.println("Проверки ради заполним этот же массив числами от 1 до его длины");
-            for (int i = 0; i < n; i++) {
-                for (int j = 0; j < n; j++)
-                    System.out.print(matr123[i][j] + "\t");
-                System.out.println();
-            }
-            System.out.println("______________________________________________");
-            System.out.println();
+            vivodGood(matrix, n);
+            goodVivod2(matr123, n);
 
         } else {
-            System.out.println("Этот массив не подходит, т.к. его квадратный корень не целое число");
-            System.out.println("Длина массива равна " + mass.length);
-            System.out.println("Квадратный корень этой длины равен " + Math.sqrt(mass.length));
-            for (int i = 0; i < mass.length; i++) {
-                System.out.print(mass[i] + " ");
-            }
-            System.out.println();
+            badVivod(mass);
         }
 
+    }
+
+    public static void vivodGood(String[][] mass, int n){
+        System.out.println("!!!!_______________________________________________________");
+        System.out.println("Этот массив подходит, т.к. его квадратный корень целое число");
+        System.out.println("Длина массива равна " + mass.length);
+        System.out.println("Квадратный корень этой длины равен " + Math.sqrt(mass.length));
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++)
+                System.out.print(mass[i][j] + "\t");
+            System.out.println();
+        }
+        System.out.println("______________________________________________");
+        System.out.println();
+    }
+
+    public static void goodVivod2(String[][] mass, int n){
+        System.out.println("!!!!_______________________________________________________");
+        System.out.println("Проверки ради заполним этот же массив числами от 1 до его длины");
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++)
+                System.out.print(mass[i][j] + "\t");
+            System.out.println();
+        }
+        System.out.println("______________________________________________");
+        System.out.println();
+    }
+
+    public static void badVivod(String[] mass){
+        System.out.println("Этот массив не подходит, т.к. его квадратный корень не целое число");
+        System.out.println("Длина массива равна " + mass.length);
+        System.out.println("Квадратный корень этой длины равен " + Math.sqrt(mass.length));
+        for (int i = 0; i < mass.length; i++) {
+            System.out.print(mass[i] + " ");
+        }
+        System.out.println();
+    }
+
+    public static boolean matches(String[] mass){
+        double z = Math.sqrt((double)mass.length);
+        String x = Double.toString(z);
+        return x.substring(x.indexOf(".")+1, x.length()-1).matches("[0-9]+");
     }
 }
